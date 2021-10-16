@@ -5,7 +5,7 @@
         <title>Amicable Numbers</title>
     <script lang="javascript">
         function isFactor(num, testNum){
-            if (num % test_num == 0){
+            if (num % testNum == 0){
                 return true;
             }
             return false;
@@ -36,8 +36,7 @@
             num2 = document.getElementById("input2".value);
             num1_sum = addFactors(getFactors(num1));
             num2_sum = addFactors(getFactors(num2));
-            // (num1_sum == num2) && (num2_sum == num1)
-            if(num1 == 220){
+            if((num1_sum == num2) && (num2_sum == num1)){
                 alert("Your numbers are amicable!");
             }
             else{
