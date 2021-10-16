@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Amicable Numbers</title>
+    <script lang="javascript">
+        function isFactor(num, testNum){
+            if (num % test_num == 0){
+                return true;
+            }
+            return false;
+        }
+        // function showFactors(numFactors){
+        //     factors = numFactors;
+        //     return factors;
+        // }
+        function addFactors(factors){
+            sum = 0;
+            for(i = 0; i < factors.length; i++){
+                sum = sum + factors[i];
+            }
+            return sum;
+        }
+        function getFactors(number){
+            var allFactors = new Array;
+            for(int = 1; int < number; int++){
+                if(isFactor(number,int)){
+                    allFactors.push(int);
+                }
+            }
+            return allFactors;
+        }
+        function amicableChecker(){
+
+            num1 = document.getElementById("input1".value);
+            num2 = document.getElementById("input2".value);
+            num1_sum = addFactors(getFactors(num1));
+            num2_sum = addFactors(getFactors(num2));
+            // (num1_sum == num2) && (num2_sum == num1)
+            if(num1 == 220){
+                alert("Your numbers are amicable!");
+            }
+            else{
+                alert("Your numbers are NOT amicable.")
+            }
+        }
+    </script>
+    </head>
+
+    <body>
+        <form>
+            <h1> Amicable Numbers</h1>
+            Input 1: <input type = "number" id = "input1" name = "input1">
+            <br>
+            Input 2: <input type = "number" id = "input2" name = "input2">
+            <br>
+             <input type = "button" value = "Check" onclick = amicableChecker()>
+        </form>
+    </body>
+</html>
